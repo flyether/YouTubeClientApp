@@ -1,0 +1,23 @@
+<div *ngIf="favoritesVideo$ | async as cards" class="container" else NoVideo>
+  
+   <ng-container>
+   <app-search-item
+     *ngFor="
+       let card of cards
+         | filterSearch : signalValue.signalSearchValue()
+         | sortSearch : signalValue.sortSignalValue()
+     "
+     [card]="card"
+   ></app-search-item>
+</ng-container>
+   <ng-template #NoVideo>
+      <app-custom-button-standalone
+        [routerLink]="'login'"
+        text="Login"
+        type="button"
+      ></app-custom-button-standalone>
+   </ng-template>
+</div>
+
+
+ 

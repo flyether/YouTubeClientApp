@@ -1,0 +1,56 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1220px;
+  gap: 28px;
+  margin: 30px auto;
+  .app {
+    margin: auto;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1220px;
+    gap: 28px;
+    margin: auto;
+  }
+  .paginator {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .myPaginator {
+    border-bottom: 3px solid #2f80ed;
+    font-style: normal;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: bold;
+    padding: 7px;
+  }
+  .button {
+    width: 30px;
+
+    height: 30px;
+    font-family: Roboto;
+    font-style: bold;
+    font-size: 22px;
+    background: #2f80ed;
+    box-shadow: 2px 0px 4px 0px #2f80ed;
+    background-color: rgb(39, 109, 240);
+    border-radius: 5px;
+    margin-left: 7px;
+  }
+
+  .button:disabled {
+    box-shadow: none;
+    cursor: not-allowed;
+    background: #696a6d;
+  }
+}

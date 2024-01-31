@@ -1,0 +1,36 @@
+<div [appBorderColor]="card.snippet.publishedAt" class="card__wrapper">
+  <img
+    class="thumbnails"
+    alt="card.snippet.title"
+    [src]="card.snippet.thumbnails.medium.url"
+  />
+
+  <mat-icon (click)="addFavorite(card.id)"
+  [ngClass]="{
+    favorite: true,
+    isFavorite: isFavorite$ | async
+  }" 
+  class="favorite">grade</mat-icon>
+
+  <a *ngIf="card.link" class="link" [href]="card.link">video link</a>
+  <div class="ico__block">
+    <div class="viewed"></div>
+    <p>{{ card.statistics.viewCount }}</p>
+    <div class="like"></div>
+    <p>{{ card.statistics.likeCount }}</p>
+    <div class="copy"></div>
+    <p>{{ card.statistics.commentCount }}</p>
+  </div>
+  <p class="title">{{ card.snippet.title | truncate : 40 }}</p>
+  <div class="buttons">
+    <app-custom-button-standalone
+    [link]="'/detailed/' + card.id"
+      text="more..."
+    ></app-custom-button-standalone>
+    <app-custom-button-standalone
+      *ngIf="card.custom"
+      (buttonClick)="handleDelete(card.id)"
+      text="Delete"
+    ></app-custom-button-standalone>
+  </div>
+</div>

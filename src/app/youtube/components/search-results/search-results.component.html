@@ -1,0 +1,29 @@
+<div *ngIf="cards$ | async as cards" class="app" >
+  <div  class="container">
+  <!-- <div class="myPaginator" *ngIf="pageToken$ | async as pt"> {{pt}} </div> -->
+  <app-search-item
+    *ngFor="
+      let card of cards
+        | filterSearch : signalValue.signalSearchValue()
+        | sortSearch : signalValue.sortSignalValue()
+        | slice: 0: 20
+    "
+    [card]="card"
+  ></app-search-item>
+</div>
+
+  <ng-container *ngIf="cards.length > 0">
+
+     
+        <ng-container *ngIf="queryParam$ | async as pageInfo ">
+      <div class="myPaginator" *ngIf="cards.length > 0">
+        
+        страница {{ pageInfo.pageNumber }} из {{pageInfo.pageInfo?pageInfo.pageInfo/20: 1 }}
+        <button class="button" type="button" [disabled]="pageInfo.pageNumber && pageInfo.pageNumber < 2 " [disabled]="!pageInfo.prevPageToken" (click)="onClickPrev()"><</button>
+        <button [disabled]="!pageInfo.pageToken" class="button" type="button" (click)="onClickNext()">></button>
+      </div>
+    </ng-container>
+    </ng-container>
+
+
+</div>

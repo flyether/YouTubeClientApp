@@ -1,0 +1,79 @@
+<form
+  class="form__container"
+  [formGroup]="myReactForm"
+  (ngSubmit)="submitForm()"
+>
+  <h3 class="form__title">Login</h3>
+
+  <div class="input__group">
+    <label htmlFor="email">Login</label>
+    <input
+      id="email"
+      [ngClass]="{
+        form__input: true,
+        error:
+          myReactForm.controls['email'].invalid &&
+          (myReactForm.controls['email'].touched ||
+            myReactForm.controls['email'].dirty)
+      }"
+      formControlName="email"
+    />
+    <span
+      *ngIf="
+        myReactForm.controls['email'].invalid &&
+        (myReactForm.controls['email'].touched)
+      "
+      class="error__message"
+    >
+      <ng-container *ngIf="myReactForm.controls['email'].errors?.required">
+        Please enter a login email
+      </ng-container>
+      <ng-container *ngIf="myReactForm.controls['email'].errors?.email">
+        The login email is invalid
+      </ng-container>
+    </span>
+  </div>
+  <div class="input__group">
+    <label htmlFor="password">Password</label>
+    <input
+      id="password"
+      [ngClass]="{
+        form__input: true,
+        error:
+          myReactForm.controls['password'].invalid &&
+          (myReactForm.controls['password'].touched ||
+            myReactForm.controls['password'].dirty)
+      }"
+      formControlName="password"
+      type="password"
+    />
+    <span
+      *ngIf="
+        myReactForm.controls['password'].invalid &&
+        (myReactForm.controls['password'].touched ||
+          myReactForm.controls['password'].dirty)
+      "
+      class="error__message"
+    >
+      <ng-container *ngIf="myReactForm.controls['password'].errors?.required">
+        Please enter a password
+      </ng-container>
+      <ng-container
+        *ngIf="
+          myReactForm.controls['password'].errors?.passwordmatcherror &&
+          myReactForm.controls['password'].dirty &&
+          !myReactForm.controls['password'].errors?.required
+        "
+      >
+        Your password isn't strong enough
+      </ng-container>
+    </span>
+  </div>
+  <div class="button__group">
+    <p class="link" [routerLink]="'registration'">регистрация</p>
+    <app-custom-button-standalone
+      [type]="'submit'"
+      text="войти"
+    ></app-custom-button-standalone>
+  </div>
+</form>

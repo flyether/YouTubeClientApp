@@ -1,0 +1,222 @@
+<form
+  class="form__container"
+  [formGroup]="creteVideoForm"
+  (ngSubmit)="onFormSubmit()"
+>
+  <h3 class="form__title">Create new card</h3>
+
+  <div class="input__group">
+    <label htmlFor="title">Title</label>
+    <input
+      type="text"
+      id="title"
+      [ngClass]="{
+        form__input: true,
+        error:
+          creteVideoForm.controls['title'].invalid &&
+          (creteVideoForm.controls['title'].touched ||
+            creteVideoForm.controls['title'].dirty)
+      }"
+      formControlName="title"
+    />
+    <span
+      *ngIf="
+        creteVideoForm.controls['title'].invalid &&
+        (creteVideoForm.controls['title'].touched ||
+          creteVideoForm.controls['title'].dirty)
+      "
+      class="error__message"
+    >
+      <ng-container
+        *ngIf="
+          creteVideoForm.controls['title'].errors?.required;
+          else minlengthError
+        "
+      >
+        Please enter a title
+      </ng-container>
+      <ng-template #minlengthError>
+        <ng-container
+          *ngIf="
+            creteVideoForm.controls['title'].errors?.minlength;
+            else maxlengthError
+          "
+        >
+          The title is too short
+        </ng-container>
+      </ng-template>
+      <ng-template #maxlengthError> The title is too long </ng-template>
+    </span>
+  </div>
+  <div class="input__group">
+    <label htmlFor="description">Description</label>
+    <input
+      type="text"
+      id="description"
+      [ngClass]="
+      {
+      
+       form__input: true,
+       error:  creteVideoForm.controls['description'].invalid && creteVideoForm.controls['description'].dirty,
+      } "
+      formControlName="description"
+    />
+    <span
+      *ngIf="
+        creteVideoForm.controls['description'].invalid &&
+        creteVideoForm.controls['description'].dirty
+      "
+      class="error__message"
+    >
+      The description is too long
+    </span>
+  </div>
+  <div class="input__group">
+    <label htmlFor="img">Img</label>
+    <input
+      type="text"
+      id="img"
+      [ngClass]="
+      {
+      
+       form__input: true,
+       error:  creteVideoForm.controls['img'].invalid && creteVideoForm.controls['img'].touched,
+      } "
+      formControlName="img"
+    />
+    <span
+      *ngIf="
+       creteVideoForm.controls['img'].errors?.['required'] &&
+       creteVideoForm.controls['img'].touched 
+       "
+      class="error__message"
+    >
+      Please enter a link to the image
+    </span>
+  </div>
+  <div class="input__group">
+    <label htmlFor="link">Link</label>
+    <input
+      type="text"
+      [ngClass]="
+      {
+      
+       form__input: true,
+       error:  creteVideoForm.controls['link'].invalid && creteVideoForm.controls['link'].touched,
+      } "
+      formControlName="link"
+      id="link"
+    />
+    <span
+      *ngIf="
+       creteVideoForm.controls['link'].errors?.['required'] &&
+       creteVideoForm.controls['link'].touched 
+       "
+      class="error__message"
+    >
+      Please enter a link to the video
+    </span>
+  </div>
+
+  <div class="input__group">
+    <label htmlFor="date">Date</label>
+    <input
+      placeholder="в формате: д.м.г  00.00.0000"
+      type="text"
+      [ngClass]="{
+        form__input: true,
+        error:
+          creteVideoForm.controls['date'].invalid &&
+          (creteVideoForm.controls['date'].touched ||
+            creteVideoForm.controls['date'].dirty)
+      }"
+      formControlName="date"
+      id="date"
+    />
+    <span
+      *ngIf="
+      creteVideoForm.controls['date'].errors?.['required'] &&  (creteVideoForm.controls['date'].touched)
+      "
+      class="error__message"
+    >
+      Please enter a creation date
+    </span>
+    <span
+      *ngIf="
+      creteVideoForm.controls['date'].errors?.['dateError'] && (creteVideoForm.controls['date'].touched ||
+      creteVideoForm.controls['date'].dirty)
+      "
+      class="error__message"
+    >
+      The date is invalid
+    </span>
+    <span
+      *ngIf="
+    creteVideoForm.controls['date'].errors?.['dateFormatError'] &&
+    (creteVideoForm.controls['date'].touched ||
+    creteVideoForm.controls['date'].dirty)
+    "
+      class="error__message"
+    >
+      The date format is invalid
+    </span>
+  </div>
+
+  <div formArrayName="tags" class="input__group">
+    <div
+      *ngFor="let emp of tags.controls; let i = index"
+      [formGroupName]="i"
+      class="wight"
+    >
+      <div class="margin"><label [htmlFor]="i">Tag</label></div>
+      <input
+        [id]="i"
+        [ngClass]="{
+          form__input: true,
+          error:
+            tags.controls[i].get('tag')?.errors?.required &&
+            tags.controls[i].get('tag')?.touched
+        }"
+        formControlName="tag"
+      />
+      <br />
+      <span
+        *ngIf="
+          tags.controls[i].get('tag')?.errors?.required &&
+          tags.controls[i].get('tag')?.touched
+        "
+        class="error__message"
+      >
+        Please enter a tag
+      </span>
+    </div>
+    <span for="sdag" *ngIf="maxLengthTag" class="error__message">
+      Maximum number of tags can be 5.
+    </span>
+  </div>
+
+  <button type="button" class="button__add" (click)="addTag()">
+    Add tag +
+  </button>
+  <br />
+  <div class="button__group">
+    <app-custom-button-standalone
+      [type]="'submit'"
+      text="Create card"
+    ></app-custom-button-standalone>
+    <app-custom-button-standalone
+      [type]="'button'"
+      text="Reset"
+      (buttonClick)="resetCreteVideoForm()"
+    ></app-custom-button-standalone>
+  </div>
+  <div class="modal" *ngIf="complete" >
+    <span>The video has been created, you can view it by going to <span class="link" [routerLink]="''"> Home</span></span>
+    
+    <app-custom-button-standalone
+    [type]="'button'"
+    text="Close"
+    (buttonClick)="onCloseComplete()"
+  ></app-custom-button-standalone>
+  </div>
+</form>

@@ -1,0 +1,106 @@
+
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 263px;
+  height: 367px;
+  padding: 20px 20px 10px;
+  justify-content: space-between;
+  border-radius: 5px;
+  background: #e5e5e5;
+  margin: auto;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  border-bottom: #2f80ed solid 5px;
+  position: relative;
+}
+.title {
+  align-self: center;
+  color: #4f4f4f;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+
+.thumbnails {
+  height: 133px;
+}
+.ico__block {
+  height: 13px;
+  color: #000;
+  fill: #000;
+  font-family: Roboto;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+.like,
+.viewed,
+.copy {
+  width: 20px;
+  height: 13px;
+  margin-left: 10px;
+}
+.like {
+  background: url("/assets/svg/like.svg") no-repeat center;
+}
+.viewed {
+  background: url("/assets/svg/viewed.svg") no-repeat center;
+}
+.copy {
+  background: url("/assets/svg/copy.svg") no-repeat center;
+}
+.buttons{
+  display: flex;
+flex-direction: column;
+gap: 7px;
+  margin:0 auto;
+}
+.favorite {
+  width: 80px;
+  height: 50px;
+  color: #6a6f77;
+  font-size: 45px;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+}
+
+.isFavorite {
+  color: #4989e2;
+}
+.link{
+  color: #518ada;
+}
+
+
+
+// .like,
+// .viewed,
+// .copy {
+//   width: 20px;
+//   height: 13px;
+//   margin-left: 10px;
+// }
+// .like {
+//   background: url("/flyether-ANGULAR2023Q4/assets/svg/like.svg") no-repeat center;
+// }
+// .viewed {
+//   background: url("/flyether-ANGULAR2023Q4/assets/svg/viewed.svg") no-repeat center;
+// }
+// .copy {
+//   background: url("/flyether-ANGULAR2023Q4/assets/svg/copy.svg") no-repeat center;
+// }

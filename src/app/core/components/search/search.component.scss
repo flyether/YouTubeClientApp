@@ -1,0 +1,19 @@
+
+:host{
+   display: flex;
+   margin: auto;
+   .search__input {
+   background-color: #efefef;
+   border: none;
+   min-width: 396px;
+   height: 24px;
+   padding: 0 5px;
+ }
+ .search__button {
+   border-radius: 0px 4px 4px 0px;
+   background: #2f80ed;
+   width: 80px;
+   height: 24px;
+   flex-shrink: 0;
+ }
+}

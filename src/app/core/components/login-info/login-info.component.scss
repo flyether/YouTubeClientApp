@@ -1,0 +1,11 @@
+:host {
+  margin-left: 20%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .pic {
+    align-self: last baseline;
+  }
+
+}

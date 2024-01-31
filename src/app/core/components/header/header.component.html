@@ -1,0 +1,16 @@
+<!-- eslint-disable @angular-eslint/template/elements-content -->
+<div class="container">
+  <div class="container__s">
+    
+    <app-logo ></app-logo>
+    <app-search></app-search>    
+    <button class="param__button" (click)="settings = !settings"></button> 
+    
+    <app-settings [settings]="settings" (settingsChange)="settings = $event"></app-settings>
+    <app-custom-button-standalone type="button" [routerLink]="'admin'" text="create"></app-custom-button-standalone>
+  </div>
+  
+  <app-login-info></app-login-info>
+</div>
+<app-filtering *ngIf="settings"></app-filtering>
+

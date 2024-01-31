@@ -1,0 +1,19 @@
+<p class="text" >{{ UserName }}</p>
+<img class="pic" alt="user pic" [src]="userImg" />
+
+<div *ngIf="loggedIn$ | async as loggedIn; else loginButton">
+  <ng-container *ngIf="loggedIn; else loginButton">
+    <app-custom-button-standalone
+      (buttonClick)="handleButtonClick()"
+      text="Logout"
+      type="button"
+    ></app-custom-button-standalone>
+  </ng-container>
+</div>
+<ng-template #loginButton>
+  <app-custom-button-standalone
+    [routerLink]="'login'"
+    text="Login"
+    type="button"
+  ></app-custom-button-standalone>
+</ng-template>

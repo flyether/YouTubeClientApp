@@ -1,0 +1,218 @@
+:host {
+  display: flex;
+  margin: 44px auto;
+  max-width: 1200px;
+  width: 100%;
+  height: 461px;
+  .withe {
+    width: 35px;
+  }
+  .div__img {
+    border-radius: 0px 0px 0px 5px;
+    background: #751a1a;
+    max-width: 729px;
+    width: 100%;
+    box-shadow: 5px 10px 20px 0px rgba(51, 51, 51, 0.25);
+  }
+  .button {
+    width: 32px;
+    height: 32px;
+    background: url("/assets/svg/back_button.svg") no-repeat center;
+  }
+  .div__discripshion {
+    padding: 34px 35px;
+    max-width: 365px;
+    width: 100%;
+    border-radius: 0px 5px 5px 0px;
+    background: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 20px 0px rgba(51, 51, 51, 0.25);
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+  }
+
+  .ico__block {
+    margin: 0 auto ;
+    margin-top: auto;
+    height: 13px;
+    color: #000;
+    fill: #000;
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .title,
+  .text,
+  .description,
+  .text__description {
+    line-height: normal;
+    font-family: Roboto;
+    font-style: normal;
+  }
+  .title {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .text {
+    white-space: nowrap;
+    color: #828282;
+    text-align: right;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .description {
+   margin: 34px 0 5px 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .text__description {
+    color: #828282;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .dislike {
+    background: url("/assets/svg/dislike.svg") no-repeat center;
+  }
+  .dislike,
+  .like,
+  .viewed,
+  .copy {
+    width: 20px;
+    height: 13px;
+    margin-left: 10px;
+  }
+  .like {
+    background: url("/assets/svg/like.svg") no-repeat center;
+  }
+  .viewed {
+    background: url("/assets/svg/viewed.svg") no-repeat center;
+  }
+  .copy {
+    background: url("/assets/svg/copy.svg") no-repeat center;
+  }
+}
+
+
+
+
+// :host {
+//   display: flex;
+//   margin: 44px auto;
+//   max-width: 1200px;
+//   width: 100%;
+//   height: 461px;
+//   .withe {
+//     width: 35px;
+//   }
+//   .div__img {
+//     border-radius: 0px 0px 0px 5px;
+//     background: #751a1a;
+//     max-width: 729px;
+//     width: 100%;
+//     box-shadow: 5px 10px 20px 0px rgba(51, 51, 51, 0.25);
+//   }
+//   .button {
+//     width: 32px;
+//     height: 32px;
+//     background: url("/flyether-ANGULAR2023Q4/assets/svg/back_button.svg") no-repeat center;
+//   }
+//   .div__discripshion {
+//     padding: 34px 35px;
+//     max-width: 365px;
+//     width: 100%;
+//     border-radius: 0px 5px 5px 0px;
+//     background: #e5e5e5;
+//     display: flex;
+//     flex-direction: column;
+//     box-shadow: 5px 5px 20px 0px rgba(51, 51, 51, 0.25);
+//   }
+//   .row {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+//     align-items: flex-end;
+//   }
+
+//   .ico__block {
+//     margin: 0 auto ;
+//     margin-top: auto;
+//     height: 13px;
+//     color: #000;
+//     fill: #000;
+//     font-family: Roboto;
+//     font-size: 10px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//     display: flex;
+//     align-items: center;
+//     gap: 5px;
+//   }
+//   .title,
+//   .text,
+//   .description,
+//   .text__description {
+//     line-height: normal;
+//     font-family: Roboto;
+//     font-style: normal;
+//   }
+//   .title {
+//     color: #000;
+//     font-size: 24px;
+//     font-weight: 700;
+//   }
+//   .text {
+//     white-space: nowrap;
+//     color: #828282;
+//     text-align: right;
+//     font-size: 10px;
+//     font-weight: 400;
+//   }
+//   .description {
+//    margin: 34px 0 5px 0;
+//     color: #000;
+//     font-size: 14px;
+//     font-weight: 400;
+//   }
+//   .text__description {
+//     color: #828282;
+//     font-size: 12px;
+//     font-weight: 400;
+//     margin-bottom: 20px;
+//   }
+
+//   .dislike {
+//     background: url("/flyether-ANGULAR2023Q4/assets/svg/dislike.svg") no-repeat center;
+//   }
+//   .dislike,
+//   .like,
+//   .viewed,
+//   .copy {
+//     width: 20px;
+//     height: 13px;
+//     margin-left: 10px;
+//   }
+//   .like {
+//     background: url("/flyether-ANGULAR2023Q4/assets/svg/like.svg") no-repeat center;
+//   }
+//   .viewed {
+//     background: url("/flyether-ANGULAR2023Q4/assets/svg/viewed.svg") no-repeat center;
+//   }
+//   .copy {
+//     background: url("/flyether-ANGULAR2023Q4/assets/svg/copy.svg") no-repeat center;
+//   }
+// }

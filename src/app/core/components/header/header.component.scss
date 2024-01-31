@@ -1,0 +1,25 @@
+:host {
+  width: 100%;
+  background-color: #e5e5e5;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  padding: 0;
+
+  .container {
+    height: 80px;
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .container__s {
+    display: flex;
+    max-width: 510px;
+    align-items: center;
+  }
+
+
+}

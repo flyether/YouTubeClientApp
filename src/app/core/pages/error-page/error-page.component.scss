@@ -1,0 +1,24 @@
+:host {
+  width: 100%;
+  display: flex;
+  max-width: 1440px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+  .block {
+    display: flex;
+    margin: auto;
+  }
+
+  .text {
+    color: #828282;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 28px;
+    text-align: left;
+  }
+}
